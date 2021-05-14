@@ -1,0 +1,363 @@
+<!-- Carousel -->
+<div class='cf'>  
+    <div class='c12'>  
+        <ngb-carousel>  
+            <ng-template ngbSlide *ngFor = 'let crsl of csl'>  
+               <div class = 'p'> <a [routerLink] = "['/watch','movie', crsl.id]"><img [src]="crsl.backdrop_path"></a></div>
+                <div class="carousel-caption">  
+                    {{crsl.title}}
+                </div>  
+            </ng-template>  
+        </ngb-carousel>  
+    </div>   
+</div> 
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- <a [routerLink] = "['/watch','movie','464052']"><button>Test</button></a> -->
+
+<!-- Popular_Movies -->
+
+<h4> Popular Movies </h4> <br>
+    <div class='col-12'>  
+        
+        <ngb-carousel  [interval]=0 >  
+            
+
+            <ng-template ngbSlide >   
+                <div class = 'card-deck'>
+                    <div class = 'card' *ngFor = 'let ppm of pm.slice(0,6)'>
+                        <div class="card-img-top card-img-top-250" >
+                        <a [routerLink] = "['/watch','movie', ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                         <div class="title">{{ppm.title}}</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </ng-template>  
+
+
+            <ng-template ngbSlide >  
+                <div class = 'card-deck'>
+                    <div class = 'card' *ngFor = 'let ppm of pm.slice(6, 12)'>
+                        <div class="card-img-top card-img-top-250">
+                            <a [routerLink] = "['/watch','movie', ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+
+            <ng-template ngbSlide >  
+                <div class = 'card-deck'>
+                    <div class = 'card' *ngFor = 'let ppm of pm.slice(12, 18)'>
+                        <div class="card-img-top card-img-top-250">
+                            <a [routerLink] = "['/watch','movie', ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+
+            <ng-template ngbSlide >  
+                <div class = 'card-deck' style = 'width: 420px !important; height: 220px !important;'>
+                    <div class = 'card'  *ngFor = 'let ppm of pm.slice(18, 20)'>
+                        <div class="card-img-top card-img-top-250" >
+                            <!-- <img class="img-fluid" [src] ="ppm.poster_path" style = 'width: 141px; height: 227px;'> -->
+                            <a [routerLink] = "['/watch','movie', ppm.id]"><img class="img-fluid" style = 'width: 200px; height: 230px;' [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+       
+        </ngb-carousel>  
+    </div>   
+
+ 
+
+<!-- Top_Rated_Movies -->
+<h4> Top Rated Movies </h4> <br>
+    <div class='col-12'>  
+       
+        <ngb-carousel [interval]=0 #carousel>  
+            <ng-template ngbSlide >  
+                <div class = 'card-deck'>
+                    <div class = 'card' *ngFor = 'let ppm of tm.slice(0,6)'>
+                        <div class="card-img-top card-img-top-250">
+                            <a [routerLink] = "['/watch','movie', ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>  
+
+            <ng-template ngbSlide >  
+                <div class = 'card-deck'>
+                    <div class = 'card' *ngFor = 'let ppm of tm.slice(6, 12)'>
+                        <div class="card-img-top card-img-top-250">
+                            <a [routerLink] = "['/watch','movie', ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+
+            <ng-template ngbSlide >  
+                <div class = 'card-deck'>
+                    <div class = 'card' *ngFor = 'let ppm of tm.slice(12, 18)'>
+                        <div class="card-img-top card-img-top-250">
+                            <a [routerLink] = "['/watch','movie', ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+
+            <ng-template ngbSlide >  
+                <div class = 'card-deck' style = 'width: 420px !important; height: 220px !important;'>
+                    <div class = 'card' *ngFor = 'let ppm of tm.slice(18, 20)'>
+                        <div class="card-img-top card-img-top-250">
+                            
+                            <a [routerLink] = "['/watch','movie', ppm.id]"><img class="img-fluid" style = 'width: 200px; height: 230px;' [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+
+        </ngb-carousel>  
+    </div>   
+ 
+
+<!-- Trending_Movies -->
+<h4> Trending Movies </h4> <br>
+    <div class='col-12'>  
+       
+        <ngb-carousel [interval]=0 #carousel>  
+            <ng-template ngbSlide >  
+                <div class = 'card-deck'>
+                    <div class = 'card' *ngFor = 'let ppm of trm.slice(0,6)'>
+                        <div class="card-img-top card-img-top-250">
+                            <a [routerLink] = "['/watch','movie', ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>  
+
+            <ng-template ngbSlide >  
+                <div class = 'card-deck'>
+                    <div class = 'card' *ngFor = 'let ppm of trm.slice(6, 12)'>
+                        <div class="card-img-top card-img-top-250">
+                            <a [routerLink] = "['/watch','movie', ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+
+            <ng-template ngbSlide >  
+                <div class = 'card-deck'>
+                    <div class = 'card' *ngFor = 'let ppm of trm.slice(12, 18)'>
+                        <div class="card-img-top card-img-top-250">
+                            <a [routerLink] = "['/watch','movie', ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+
+            <ng-template ngbSlide >  
+                <div class = 'card-deck' style = 'width: 420px !important; height: 220px !important;'>
+                    <div class = 'card' *ngFor = 'let ppm of trm.slice(18, 20)'>
+                        <div class="card-img-top card-img-top-250">
+                            
+                            <a [routerLink] = "['/watch','movie', ppm.id]"><img class="img-fluid" style = 'width: 200px; height: 230px;' [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+
+        </ngb-carousel>  
+    </div>   
+
+
+<!-- Popular_Shows -->
+<h4> Popular Shows </h4> <br>
+    <div class='col-12'>  
+        
+        <ngb-carousel [interval]=0 #carousel>  
+            <ng-template ngbSlide >  
+                <div class = 'card-deck'>
+                    <div class = 'card' *ngFor = 'let ppm of ps.slice(0,6)'>
+                        <div class="card-img-top card-img-top-250">
+                            <a [routerLink] = "['/watch','tv', ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>  
+
+            <ng-template ngbSlide >  
+                <div class = 'card-deck'>
+                    <div class = 'card' *ngFor = 'let ppm of ps.slice(6, 12)'>
+                        <div class="card-img-top card-img-top-250">
+                            <a [routerLink] = "['/watch','tv', ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+
+            <ng-template ngbSlide>  
+                <div class = 'card-deck'>
+                    <div class = 'card' *ngFor = 'let ppm of ps.slice(12, 18)'>
+                        <div class="card-img-top card-img-top-250">
+                            <a [routerLink] = "['/watch','tv', ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+
+            <ng-template ngbSlide >  
+                <div class = 'card-deck' style = 'width: 420px !important; height: 220px !important;'>
+                    <div class = 'card' *ngFor = 'let ppm of ps.slice(18, 20)'>
+                        <div class="card-img-top card-img-top-250">
+                            
+                            <a [routerLink] = "['/watch','tv', ppm.id]"><img class="img-fluid" style = 'width: 200px; height: 230px;' [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+
+        </ngb-carousel>  
+    </div>   
+
+
+<!-- Top_Rated_Shows -->
+<h4> Top Rated Shows </h4> <br>
+    <div class='col-12'>  
+       
+        <ngb-carousel [interval]=0 #carousel>  
+            <ng-template ngbSlide >  
+                <div class = 'card-deck'>
+                    <div class = 'card' *ngFor = 'let ppm of ts.slice(0,6)'>
+                        <div class="card-img-top card-img-top-250">
+                            <a [routerLink] = "['/watch','tv', ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>  
+
+            <ng-template ngbSlide >  
+                <div class = 'card-deck'>
+                    <div class = 'card' *ngFor = 'let ppm of ts.slice(6, 12)'>
+                        <div class="card-img-top card-img-top-250">
+                            <a [routerLink] = "['/watch','tv', ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+
+            <ng-template ngbSlide >  
+                <div class = 'card-deck'>
+                    <div class = 'card' *ngFor = 'let ppm of ts.slice(12, 18)'>
+                        <div class="card-img-top card-img-top-250">
+                            <a [routerLink] = "['/watch','tv', ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+
+            <ng-template ngbSlide >  
+                <div class = 'card-deck' style = 'width: 420px !important; height: 220px !important;'>
+                    <div class = 'card' *ngFor = 'let ppm of ts.slice(18, 20)'>
+                        <div class="card-img-top card-img-top-250">
+                            
+                            <a [routerLink] = "['/watch','tv', ppm.id]"><img class="img-fluid" style = 'width: 200px; height: 230px;' [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+
+        </ngb-carousel>  
+    </div>   
+ 
+
+<!-- Trending_Shows -->
+<h4> Trending Shows </h4> <br>
+    <div class='col-12'>  
+        
+        <ngb-carousel [interval]=0 #carousel>  
+
+            <ng-template ngbSlide >  
+                <div class = 'card-deck'>
+                    <div class = 'card' *ngFor = 'let ppm of trs.slice(0,6)'>
+                        <div class="card-img-top card-img-top-250">
+                            <a [routerLink] = "['/watch','tv', ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>  
+
+            <ng-template ngbSlide >  
+                <div class = 'card-deck'>
+                    <div class = 'card' *ngFor = 'let ppm of trs.slice(6, 12)'>
+                        <div class="card-img-top card-img-top-250">
+                            <a [routerLink] = "['/watch','tv', ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+
+            <ng-template ngbSlide >  
+                <div class = 'card-deck'>
+                    <div class = 'card' *ngFor = 'let ppm of trs.slice(12, 18)'>
+                        <div class="card-img-top card-img-top-250">
+                            <a [routerLink] = "['/watch','tv', ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+
+            <ng-template ngbSlide >  
+                <div class = 'card-deck' style = 'width: 420px !important; height: 220px !important;'>
+                    <div class = 'card' *ngFor = 'let ppm of trs.slice(18, 20)'>
+                        <div class="card-img-top card-img-top-250">
+                            
+                            <a [routerLink] = "['/watch','tv', ppm.id]"><img class="img-fluid" style = 'width: 200px; height: 230px;' [src] ="ppm.poster_path"></a>
+                            <div class="title">{{ppm.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+
+        </ngb-carousel>  
+    </div>   
+ 
+
+
+
+
+        
+
+
+
+

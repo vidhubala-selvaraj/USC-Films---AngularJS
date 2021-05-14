@@ -1,0 +1,65 @@
+.form-control{
+    box-sizing: 10px;
+    font-size: x-small;
+}
+
+#typeahead-template:focus
+{
+    outline: none
+}
+
+
+::ng-deep .dropdown-item, .dropdown-menu  {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: white;
+    text-align: left;
+    background-color: #05213f;
+}
+
+::ng-deep a
+{
+    /* background-color: #05213f; */
+    color: white;
+    text-decoration: none;
+    background-color: none;
+}
+::ng-deep a:hover
+{
+    color: white;
+    text-decoration: none;
+    background-color: none;
+}
+::ng-deep a:active
+{
+    color: white;
+    text-decoration: none;
+    background-color: none;
+}
+
+::ng-deep .dropdown-menu.show {
+    display: block;
+    background-color: #05213f;
+}
+
+::ng-deep #typeahead-template, ::ng-deep #typeahead-template:active {
+    border-bottom: white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+/* ::ng-deep .dropdown-item
+{ 
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    color: white;
+    background-color: rgb(20, 4, 53);
+} */

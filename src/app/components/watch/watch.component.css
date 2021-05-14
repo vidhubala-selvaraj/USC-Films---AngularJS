@@ -1,0 +1,303 @@
+.container {
+    /* border: 2px solid greenyellow; */
+    width:1000px;
+    /* height: 420px; */
+    
+}
+
+.container-fluid {
+    
+    width:1000px;
+    height: 420px;
+    
+}
+
+.video
+{
+    /* border: 2px solid rgb(109, 47, 255);  */
+    width: 700px;
+    height: 400px;
+    margin-top: 10px;
+}
+
+.video_details
+{
+    /* border: 2px solid rgb(255, 47, 47); */
+    width: 250px;
+    height: 400px;
+    margin-top: 10px;
+    margin-left: 10px;
+    
+}
+
+.video, .video_details
+{
+    display: inline-block;
+    
+}
+
+.video_details
+ {
+    color: white;
+    position: absolute;
+}
+
+.description_container 
+{
+    width: 1000px;
+    /* height: 200px; */
+    padding-left: 270px;
+}
+
+.description 
+{
+    width: 1000px;
+}
+
+.share_container 
+
+{
+    width: 1000px;
+    height: 50px;
+    padding-left: 270px;
+}
+
+.reviews_container
+{
+    width: 1000px;
+    padding-left: 270px;
+}
+
+.row {
+    width: 1000px;
+    /* display: flex; */
+    border-radius: 3mm;
+    margin-bottom: 10px;
+
+}
+
+#rev-stars
+{
+    border: 1px solid black;
+    border-radius: 12mm;
+    background-color: black;
+}
+
+/* Card_Recommended_Similar */
+
+ngb-carousel{
+    outline: none !important;
+}
+ng-template {
+    outline: none !important;
+}
+
+.col-12{
+    width: 1200px;
+    height: 350px;
+    margin-left: 170px;
+    border: none;
+    padding-top: 5px;
+}
+
+.card, .card-deck {
+    border:none !important;
+    outline:0 !important;
+}
+
+/* control image height */
+.card-img-top-250 {
+    max-height: 225px;
+    overflow:hidden;
+    
+}
+
+
+.card-img-top-250:hover {
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5); 
+    transform: scale(1.17); 
+    border: none;
+}
+
+::ng-deep .carousel-control-prev {
+    left: -140px;
+    
+    
+}
+
+::ng-deep .carousel-control-next {
+    right: -140px;
+    
+}
+
+::ng-deep .carousel-control-prev-icon {
+    border: solid whitesmoke;
+    border-width: 0 6px 6px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    width: 15px;
+    height: 15px;
+    background: 10%/100% 100% no-repeat;
+    background-blend-mode: inherit;
+}
+
+::ng-deep .carousel-control-next-icon {
+    border: solid whitesmoke;
+    border-width: 0 6px 6px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: 10%/100% 100% no-repeat;
+    
+}
+
+
+::ng-deep .carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    left: 0;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    margin-right: 15%;
+    margin-left: 15%;
+    list-style: none;
+}
+
+h4 {
+    color: white;
+    margin-left: 170px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Card_Cast_Crew */
+
+
+body{
+	background-color: black;
+	/* color: #fff; */
+	font-family: 'system-ui';
+}
+
+h1{
+	font-weight: 800;
+	font-size: 3em;
+}
+
+.subtitle{
+	font-size: 1.25em;
+	opacity: 0.65;
+}
+
+.card-block{
+	height: 225px;
+    width: 150px;
+	background-color: none;
+	border: none;
+	background-position: center;
+	background-size: cover;
+    border-radius: 21mm;
+	transition: all 0.2s ease-in-out !important;
+	
+}
+
+/* .col-4
+{
+    width: 100px !important;
+    height: 150px !important;
+    padding: 0px !important;
+    flex: 0 0 25%;
+    max-width: 17%;
+    
+} */
+
+.left, .right 
+{
+    display: inline-block;
+}
+
+/* Cast_Scrolling_Bar */
+
+.scrolling-wrapper{
+	overflow-x: auto;
+}
+
+.scrolling-wrapper {
+  height: 350px;
+  overflow-x: auto;
+}
+
+
+/* Custom Scrollbar using CSS */
+.scrolling-wrapper {
+    overflow-y: hidden;
+  
+}
+
+/* scrollbar width */
+.scrolling-wrapper::-webkit-scrollbar {
+padding-top: 10px;
+  overflow-y: hidden;
+  height: 8px;
+  width: 1px;
+}
+
+/* scrollbar track */
+.scrolling-wrapper::-webkit-scrollbar-track {
+  border: 0.2px solid lightgray;
+  padding-top: 10px;
+  border-radius: 1rem;
+  height: 1px;
+  width: 1px;
+}
+
+/* scrollbar handle */
+.scrolling-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 0.4rem;
+  background-color: lightgray;
+  background-image: linear-gradient(grey 100%);
+  overflow-y: hidden;
+}
+
+/* review_content */
+.revs{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
+.footer {
+    clear: both;
+    color: white;
+    position: relative;
+    height: 50px;
+    text-align: center;
+    background-color: black;
+    margin-top: 10px;
+}
+
+
+    
+
+  
+
+    
+    

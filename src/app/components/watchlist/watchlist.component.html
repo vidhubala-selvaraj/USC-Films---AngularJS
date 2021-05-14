@@ -1,0 +1,29 @@
+<app-nav-bar></app-nav-bar>
+<div *ngIf = "checkListLength();then hasList else noList"></div>
+<div id="list-content" style="height:50vh;">
+    <ng-template #hasList id="list-content">
+        <div class="container">
+            <h1 id="card-header" style="color: white;">My WatchList</h1>
+        </div>
+        <div class="container" id="movie-cards">
+            <div class="container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4 col-md-2" *ngFor = "let inner of myList" style="padding:1%;">
+                            <a [routerLink] = "['/watch',inner.media_type,inner.id]">
+                                <img class="card-img-top" [src]="inner.poster_path" alt="Card image cap">
+                                <div id="movie-title">{{inner.title}}</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template #noList>
+        <div class="container" id="no-items">
+            <h1  style="color: white;">No items found in WatchList.</h1>
+        </div>
+    </ng-template>
+</div>
+

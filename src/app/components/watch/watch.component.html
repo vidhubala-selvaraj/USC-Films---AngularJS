@@ -1,0 +1,231 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title"> {{cast_det.name}} </h4>
+      <button type="button" class="close" style = 'border: none;' aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-2"><img style = 'width: 130px; height: 150px;' [src] = "cast_det.profile_path"></div>
+            <div class="col-8">
+            <div style = 'font-size: 14px;'> Birth: {{cast_det.birthday}}</div>
+            <div style = 'font-size: 14px;'> Birth Place: {{cast_det.birth_place}}</div>
+            <div style = 'font-size: 14px;'> Gender: {{cast_det.gender}}</div>
+            <div style = 'font-size: 14px;'> Known for: {{cast_det.known_for}}</div>
+            <div style = 'font-size: 14px;'> Also known as: {{cast_det.as}}</div>
+            <div class = 'icons'>
+
+            </div>
+            </div>
+          </div>
+      <p style = 'font-size: 14px;'>{{cast_det.bio}}</p>
+    </div>
+</ng-template>
+
+
+
+<app-nav-bar></app-nav-bar>
+
+<div class = 'container'>
+
+<div class = 'video'> <youtube-player videoId="{{vid[0]?.video}}" style = 'width: 700px; height: 400px;'></youtube-player> </div>
+<div class = 'video_details'> <h3> {{det[0]?.title}} </h3> 
+<div class = 'tagline'> <p style = "color: white;">  <em> {{det[0]?.tagline}} </em>  </p> </div>
+<div class = 'date'> <p style = "color: white;"> {{det[0]?.release_date}} | <span style = 'border: white; color: white;'>&#9733;</span> {{det[0]?.vote_average}} | {{det[0]?.runtime}}  </p></div>
+<div class = 'genres'> <p style = "color: white;"> Genres: {{det[0]?.gen}}</p></div>
+<div class = 'lang'> <p style = "color: white;"> Spoken languages: {{det[0]?.spoken_lang}} </p></div>
+<div class = 'add_watchlist'><button type="button" class="btn btn-primary btn-sm" (click)="Local_Storage(det[0].id, det[0].media_type, det[0].poster_path, det[0].title)">{{button_content}}</button></div>
+</div>
+
+</div>
+
+
+
+<div class = 'description_container'>
+<div class = 'description'>
+    <p style = "color: white; font-size: 25px;"><b> Description </b></p>
+    <p style = "color: white;">   {{det[0].overview}}  </p>
+</div>
+</div>
+
+<br>
+
+
+<div class = 'share_container'>
+<div class = 'share'>
+    <p style = "color: white; font-size: 25px;"> <b> Share </b> </p>  
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="vv6Nx1fi"></script>
+
+<div class="fb-share-button" 
+data-href="https://www.smartenergydecisions.com/upload/images/company_images/facebook.jpg" 
+data-layout="button" data-size="large">
+<a class="twitter-share-button"
+href="https://twitter.com/intent/tweet?text=Watch%20Movie"
+data-size="large"> <i class="fa fa-twitter" style="font-size:40px;color: rgb(51, 147, 207)">&nbsp;</i></a>
+
+<a target="_blank" 
+href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.smartenergydecisions.com%2Fupload%2Fimages%2Fcompany_images%2Ffacebook.jpg&amp;src=sdkpreparse"
+class="fb-xfbml-parse-ignore"><i class="fa fa-facebook-square" style="font-size:40px;color: blue"></i></a> 
+
+</div> 
+</div>
+</div>
+
+<br>
+<br>
+
+<!-- Cast and Crew -->
+<app-modal></app-modal>
+
+
+<div class="container-fluid">
+    <h3 style = 'color: white;' class="mt-5" > Full Cast and Crew</h3>
+		
+    <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
+			
+		<div class="col-4" style = 'flex: 0 0 25%; max-width: 16.5%;' *ngFor = 'let ct of cast'>
+			<div class="card card-block"> 
+                <img (click)="openLg(content,ct.id)" style = 'border-top-left-radius: 5mm; border-top-right-radius: 5mm;' [src]="ct.profile_path">
+                
+                <div class = 'cast_name' style = 'width: 150px !important; height: 96px !important; color: black; text-align: center; background: white; border-bottom-left-radius: 5mm; border-bottom-right-radius: 5mm;'> <b>{{ct.name}} <br> AS  </b> <br>  {{ct.character}} </div> 
+			</div>
+        </div>
+    </div>
+</div>
+
+
+<div class = 'reviews_container'>
+    <div class = 'review'> <h3 style = 'color: white;'> Reviews {{rev.length}}</h3>
+    <div class= 'container'>
+    <div class = 'row justify-content-start' style = 'background-color: white;' *ngFor = 'let r of rev'>
+        <div class = '.col-8' style = 'width: 15%; padding-left: 50px; padding-top: 20px;'> 
+            <img style = 'width: 60px; height: 60px; border-radius: 50%;' [src] = 'r.avatar_path'> 
+        </div>
+        <div class= 'col-10' style = 'width: 75%;'>
+        <p style = 'color: black; margin-left: 100px; font-size: 20px; margin-top: 7px;'> <b>A review created by {{r.author}}</b> 
+        &nbsp;&nbsp;&nbsp;
+                <span id="rev-stars" style = 'color: white;'>&nbsp;&#9733;&nbsp;<span style="font-size: .8rem;">{{r.rating}}&nbsp;</span></span>
+        </p>
+        <p style = 'color: grey; margin-left: 100px; font-size: 12px;'> Written by {{r.author}} on {{r.created_at_month}} {{r.created_at_date}}, {{r.created_at_year}} {{r.created_at_time}}</p>
+         <p class = 'revs' style = 'color: black; margin-left: 100px; text-align: justify;'> {{r.content}}...</p>
+            <a target="_blank" id="rev-url" style = 'margin-left: 100px;' href="{{r.url}}">Read the rest</a>  
+
+        </div> 
+    </div>
+</div>
+</div>
+</div>
+
+<br>
+
+<!-- Recommended  -->
+
+<h4> Recommended {{det[0].media}}</h4> <br>
+    <div class='col-12'>  
+        
+        <ngb-carousel [interval]=0 #carousel>  
+            <ng-template ngbSlide >  
+                <div class = 'card-deck'>
+                    <div class = 'card' *ngFor = 'let ppm of rcmd.slice(0,6)'>
+                        <div class="card-img-top card-img-top-250">
+                            <a [routerLink] = "['/watch',det[0].media_type, ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                        </div>
+                    </div>
+                </div>
+        </ng-template>  
+
+            <ng-template ngbSlide >  
+                <div class = 'card-deck'>
+                    <div class = 'card' *ngFor = 'let ppm of rcmd.slice(6, 12)'>
+                        <div class="card-img-top card-img-top-250">
+                            <a [routerLink] = "['/watch',det[0].media_type, ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+
+            <ng-template ngbSlide>  
+                <div class = 'card-deck'>
+                    <div class = 'card' *ngFor = 'let ppm of rcmd.slice(12, 18)'>
+                        <div class="card-img-top card-img-top-250">
+                            <a [routerLink] = "['/watch',det[0].media_type, ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+
+            <ng-template ngbSlide >  
+                <div class = 'card-deck' style = 'width: 420px !important; height: 220px !important;'>
+                    <div class = 'card' *ngFor = 'let ppm of rcmd.slice(18, 20)'>
+                        <div class="card-img-top card-img-top-250">
+                            
+                            <a [routerLink] = "['/watch',det[0].media_type, ppm.id]"><img class="img-fluid" style = 'width: 200px; height: 230px;' [src] ="ppm.poster_path"></a>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+
+        </ngb-carousel>  
+    </div>   
+
+
+    <!-- Similar  -->
+
+<h4> Similar {{det[0].media}}</h4> <br>
+<div class='col-12'>  
+    
+    <ngb-carousel [interval]=0 #carousel>  
+        <ng-template ngbSlide >  
+            <div class = 'card-deck'>
+                <div class = 'card' *ngFor = 'let ppm of sim.slice(0,6)'>
+                    <div class="card-img-top card-img-top-250">
+                        <a [routerLink] = "['/watch',det[0].media_type , ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                    </div>
+                </div>
+            </div>
+        </ng-template>  
+
+        <ng-template ngbSlide >  
+            <div class = 'card-deck'>
+                <div class = 'card' *ngFor = 'let ppm of sim.slice(6, 12)'>
+                    <div class="card-img-top card-img-top-250">
+                        <a [routerLink] = "['/watch',det[0].media_type, ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                    </div>
+                </div>
+            </div>
+        </ng-template> 
+
+        <ng-template ngbSlide>  
+            <div class = 'card-deck'>
+                <div class = 'card' *ngFor = 'let ppm of sim.slice(12, 18)'>
+                    <div class="card-img-top card-img-top-250">
+                        <a [routerLink] = "['/watch', det[0].media_type , ppm.id]"><img class="img-fluid" [src] ="ppm.poster_path"></a>
+                    </div>
+                </div>
+            </div>
+        </ng-template> 
+
+        <ng-template ngbSlide >  
+            <div class = 'card-deck' style = 'width: 420px !important; height: 220px !important;'>
+                <div class = 'card' *ngFor = 'let ppm of sim.slice(18, 20)'>
+                    <div class="card-img-top card-img-top-250">
+                        
+                        <a [routerLink] = "['/watch',det[0].media_type, ppm.id]"><img class="img-fluid" style = 'width: 200px; height: 230px;' [src] ="ppm.poster_path"></a>
+                    </div>
+                </div>
+            </div>
+        </ng-template> 
+
+    </ngb-carousel>  
+</div> 
+
+<div class = 'footer'>Powered by TMDB. Developed by Vidhubala Selvaraj.</div>
+
+<router-outlet></router-outlet>
+
+

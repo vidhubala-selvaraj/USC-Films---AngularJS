@@ -1,0 +1,191 @@
+.cf {
+    padding-top: 30px;
+    width: 1200px;
+    height: 380px;
+    margin-left: 170px;
+    
+}
+
+.c12 img{
+    width: 100%;
+    height: 380px;
+    background-size: cover;
+    overflow:hidden;
+    border: none !important;
+
+    
+}
+
+.carousel-caption{
+    /* position: absolute; */
+    left: 0% !important;
+    right: 0% !important;
+    bottom: 20px;
+    z-index: 10;
+    padding-top: 20px;
+    /* padding-bottom: 20px; */
+    text-align: start;
+    padding-left:5%;
+    /* background: rgb(0, 0, 0); */
+    background: rgba(0, 0, 0, 0.5); 
+    /* color: #f1f1f1;  */
+    /* width: 100%; */
+    /* transition: .5s ease; */
+    /* opacity:0;  */
+    /* background: #9B9B9B;
+    background: -webkit-linear-gradient(top, #9B9B9B, #010101);
+    background: -moz-linear-gradient(top, #9B9B9B, #010101);
+    background: linear-gradient(to bottom, #9B9B9B, #010101); */
+
+}
+
+
+.col-12{
+    width: 1200px;
+    height: 350px;
+    margin-left: 170px;
+    border: none;
+    padding-top: 5px;
+}
+
+ngb-carousel{
+    outline: none !important;
+}
+ng-template {
+    outline: none !important;
+}
+
+.card, .card-deck {
+    border:none !important;
+    outline:0 !important;
+}
+
+
+/* control image height */
+.card-img-top-250 {
+    max-height: 225px;
+    overflow:hidden;
+    
+}
+
+.title {
+    position: absolute; 
+    bottom: 0; 
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1; 
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .card-img-top-250:hover .title {
+    opacity: 1;
+  }
+
+
+.card-img-top-250:hover{
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5); 
+    transform: scale(1.17); 
+    border: none;
+    visibility: visible;
+    color: #fff;
+}
+
+.card-img-top-250:hover .title{
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5); 
+    transform: scale(1.17); 
+    border: none;
+    visibility: visible;
+    color: #fff;
+} 
+
+.title{
+    color: #fff;
+    /* background-color: indigo; */
+    font-size: 12px;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    visibility: hidden;
+}
+
+.card-img-top-250:hover .title {
+    visibility: visible;
+
+}
+
+/*  */
+
+/* smoother transitions */
+/* .carousel-inner>.carousel-item.next.left,
+.carousel-inner>.carousel-item.prev.right
+{
+    transition: all 1s ease;
+}  */
+
+
+.carousel-control-prev {
+    left: -140px;
+    
+    
+}
+
+.carousel-control-next {
+    right: -140px;
+    
+}
+
+.carousel-control-prev-icon {
+    border: solid whitesmoke;
+    border-width: 0 6px 6px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    width: 15px;
+    height: 15px;
+    background: 10%/100% 100% no-repeat;
+    background-blend-mode: inherit;
+}
+
+.carousel-control-next-icon {
+    border: solid whitesmoke;
+    border-width: 0 6px 6px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: 10%/100% 100% no-repeat;
+    
+}
+
+
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    left: 0;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    margin-right: 15%;
+    margin-left: 15%;
+    list-style: none;
+}
+
+h4 {
+    color: white;
+    margin-left: 170px;
+}
+

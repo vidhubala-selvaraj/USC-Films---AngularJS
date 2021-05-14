@@ -1,0 +1,55 @@
+<!-- <input id="search-bar" 
+       type="text" 
+       class="form-control" 
+       [(ngModel)]="model" 
+       [ngbTypeahead]="search"/>
+<hr> -->
+
+<!-- <p>A typeahead example that uses a custom template for results display, an object as the model,
+       and the highlight directive to highlight the term inside the custom template.
+     </p>
+     
+     <ng-template #rt let-r="result" let-t="term">
+       <img [src]="r['backdrop_path']" class="mr-1" style="width: 16px">
+       <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+     </ng-template>
+     
+     <label for="typeahead-template">Search for a state:</label>
+     <input id="typeahead-template" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" [resultTemplate]="rt"
+       [inputFormatter]="formatter" />
+     <hr> -->
+
+
+     <!-- <div class="form-group">
+       <label for="ArtistName">Band Name:</label>
+       <input id="ArtistName" type="text"
+              name="ArtistName"
+              class="form-control"                     
+              [(ngModel)]="model"
+              [ngbTypeahead]="search"                     
+              [resultFormatter]="resultFormatBandListValue"
+              [inputFormatter]="inputFormatBandListValue"
+              #instance="ngbTypeahead"                     
+         />
+     </div> -->
+
+     <!-- Wikipedia Search -->
+<router-outlet></router-outlet>
+<ng-template #rt let-r="result" let-t="term" style = 'background-color: rgb(4, 4, 58);'>
+  <a [routerLink] = "['/watch',r.media_type, r.id]"><div><img [src]="r.poster_path" class="mr-1" style="width: 25px; height: 25px;">
+<ngb-highlight [result]="r.title" [term]="t" ></ngb-highlight></div></a>
+</ng-template>
+
+<label for="typeahead-template"></label>
+<input id="typeahead-template" type="text" style = 'background-color: rgb(4, 4, 58); border-top: none; border-right: none; border-left: none; border-bottom: 2px solid white; font-size: 16px; outline: none;' class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Search" [resultTemplate]="rt"
+  [inputFormatter]="formatter" />
+<!-- <fieldset class="form-inline">
+  <div class="form-group">
+    <label for="typeahead-http">Search for a wiki page:</label>
+    <input id="typeahead-http" type="text" class="form-control mx-sm-3" [class.is-invalid]="searchFailed" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Wikipedia search" />
+    <small *ngIf="searching" class="form-text text-muted">searching...</small>
+    <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
+  </div>
+</fieldset>
+<hr>
+<pre>Model: {{ model | json }}</pre> -->
